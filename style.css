@@ -126,6 +126,7 @@ body {
     color: black;
     background-color: yellow;
     width: 400px;
+    height: 478px;
     border: 5px solid black;
     box-shadow: 10px 10px black;
     left: 50%;
@@ -145,11 +146,11 @@ body {
     box-shadow: 10px 10px black;
 }
 
-#restart:focus {
+#restart:focus, #back:focus {
     outline: none;
 }
 
-#restart:hover {
+#restart:hover, #back:hover {
     cursor: pointer;
     transition: background-color 1s ease, box-shadow .3s ease;
     box-shadow: 8px 8px black;
@@ -213,5 +214,60 @@ body {
     }
 }
 
+.home {
+    background-image: url("unnamed.jpg");
+    background-size: 500px 750px;
+    background-repeat: no-repeat;
+    width: 500px;
+    height: 750px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow-x: hidden;
+    box-shadow: 10px 10px black;
+    border: 5px solid black;
+}
 
+.play {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    bottom: 40px;
+    left: 185px;
+}
+
+.score {
+    background-image: url("cup.png");
+    background-size: cover;
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: 40px;
+    left: 185px;
+}
+
+.screen {
+    visibility: hidden;
+}
+
+.places {
+    position: absolute;
+    bottom: 150px;
+    left: 50px;
+}
+
+#back {
+    position: absolute;
+    font-family: "8BITWONDERNominal";
+    font-size: 1.5em;
+    margin: 20px;
+    padding: 1%;
+    border: 5px solid black;
+    background-color: green;
+    box-shadow: 10px 10px black;
+    bottom: 25px;
+    width: 200px;
+    left: 75px;
+}
 
