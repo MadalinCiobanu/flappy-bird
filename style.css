@@ -79,7 +79,7 @@ body {
     background-image: url(groundBIG.png);
     /* background-size: 1000px; */
     left: 0px;
-    animation: slide 5s infinite linear;
+    animation: slide 3.8s infinite linear;
     z-index: 2;
 }
 
@@ -151,7 +151,8 @@ body {
 
 #restart:hover {
     cursor: pointer;
-    transition: background-color 1s ease;
+    transition: background-color 1s ease, box-shadow .3s ease;
+    box-shadow: 8px 8px black;
     background-color: greenyellow;
 }
 
@@ -172,6 +173,7 @@ body {
 @keyframes rotate {
     from {
         transform: rotate(-10deg);
+        
     }
 
     to {

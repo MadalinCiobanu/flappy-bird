@@ -67,16 +67,13 @@ function gameOver (condition) {
         bird.classList.remove('animate');
         bird.classList.add('dissappear');
         
-
         gameOverMessage.classList.add('appear');
         scoreDisplay.textContent = `SCORE ${score}`;
         tryAgain.addEventListener('click', ()=>{location.reload()});
 
         // Get high score
-
         highestScoreDisplay.textContent = `HIGH SCORE ${highScore}`;
-        setTimeout(() => {container.removeChild(bird)}, 300);
-        
+        // setTimeout(() => {container.removeChild(bird)}, 300);
     }
 }
 
@@ -142,13 +139,6 @@ function genObstacle () {
         let moveObstacles = setInterval(handleObstacles, 15);
     }
 }
-
-// function counter () {
-//     setTimeout(() => {
-//         countDown.textContent = 3;
-
-// }
-
 
 
 initGame();
