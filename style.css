@@ -1,26 +1,85 @@
+body {
+    background-color: yellow;
+}
+
+.input {
+    font-family: "8BITWONDERNominal";
+    font-size: 2em;
+    width: 400px;
+    background-color: white;
+    box-shadow: 10px 10px black;
+    border: 5px solid black;
+}
+
 .game_container {
     width: 500px;
     height: 750px;
-    margin: 0 auto;
-    border: 1px solid black;
     position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     overflow-x: hidden;
+    box-shadow: 10px 10px black;
+    border: 5px solid black;
+}
+
+.countdown {
+    position: absolute;
+    color: white;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "8BITWONDERNominal";
+    font-size: 4em;
+    text-shadow: 5px 5px black;
+    -webkit-text-stroke: 1px black;
+    z-index: 2;
+}
+
+
+.score_show {
+    position: absolute;
+    font-family: "8BITWONDERNominal";
+    font-size: 2em;
+    text-shadow: 5px 5px black;
+    -webkit-text-stroke: 1px black;
+    left: 50%;
+    top: 5%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: white;
 }
 
 
 .background {
+    background-image: url(gameBackground.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     background-color: lightblue;
     height: 600px;
     width: 500px;
     position: absolute;
 }
 
-.ground {
+.ground_container {
+    /* background-image: url(ground.png); */
     width: 500px;
     height: 150px;
-    background-color: brown;
+    /* background-color: lightblue; */
     position: absolute;
     top: 600px;
+    z-index: 2;
+    /* animation: slideright 100s infinite linear; */
+}
+
+.ground {
+    position: absolute;
+    width: 1000px;
+    height: 100%;
+    background-image: url(groundBIG.png);
+    /* background-size: 1000px; */
+    left: 0px;
+    animation: slide 5s infinite linear;
     z-index: 2;
 }
 
@@ -54,12 +113,103 @@
     animation-timing-function: ease-in-out;
 }
 
+.dissappear {
+    animation: dissappear .3s;
+    animation-fill-mode: forwards;
+}
+
+.game_over {
+    position: absolute;
+    font-family: "8BITWONDERNominal";
+    font-size: 1.5em;
+    text-align: center;
+    color: black;
+    background-color: yellow;
+    width: 400px;
+    border: 5px solid black;
+    box-shadow: 10px 10px black;
+    left: 50%;
+    bottom: -10%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    z-index: 2;
+}
+
+#restart {
+    font-family: "8BITWONDERNominal";
+    font-size: 1.5em;
+    margin: 20px;
+    padding: 1%;
+    border: 5px solid black;
+    background-color: green;
+    box-shadow: 10px 10px black;
+}
+
+#restart:focus {
+    outline: none;
+}
+
+#restart:hover {
+    cursor: pointer;
+    transition: background-color 1s ease;
+    background-color: greenyellow;
+}
+
+#game_over {
+    -webkit-text-stroke: 1px black;
+    font-size: 3em;
+    color: #bb2222;
+    text-shadow: 10px 10px black;
+}
+
+.appear {
+    visibility: visible;
+    animation: appear 0.5s;
+    animation-fill-mode: forwards;
+}
+
+
 @keyframes rotate {
-    0% {
+    from {
         transform: rotate(-10deg);
     }
 
-    100% {
+    to {
         transform: rotate(70deg);
     }
 }
+
+@keyframes appear {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
+@keyframes dissappear {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes slide {
+    from {
+        left: 0px;
+    }
+    to {
+        left: -478px;
+    }
+}
+
+
+
