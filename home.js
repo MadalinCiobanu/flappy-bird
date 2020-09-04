@@ -14,15 +14,15 @@ const third = document.getElementById("3rd");
                highscore.classList.add("appear");
 
                if (localStorage.getItem("1st") !== null) {
-                      let node = document.createTextNode(`1. ${localStorage.getItem("1st")} points`);
+                      let node = document.createTextNode(`1st - ${localStorage.getItem("1st")} points`);
                      first.appendChild(node);
                }
                if (localStorage.getItem("2nd") !== null) {
-                      let node = document.createTextNode(`2. ${localStorage.getItem("2nd")} points`);
+                      let node = document.createTextNode(`2nd - ${localStorage.getItem("2nd")} points`);
                       second.appendChild(node);
                }
                if (localStorage.getItem("3rd") !== null) {
-                      let node3 = document.createTextNode(`3. ${localStorage.getItem("3rd")} points`);
+                      let node3 = document.createTextNode(`3rd - ${localStorage.getItem("3rd")} points`);
                      third.appendChild(node3);
                }
         }

@@ -3,8 +3,10 @@ let gravityFactor = 2;
 const jumpFactor = 70;
 let isGameOver = false;
 let score = 0;
-let highScore = localStorage.getItem('highScore');
-highScore = 0 ? highScore == null : highScore;
+
+let first = localStorage.getItem('1st');
+let second = localStorage.getItem('2nd');
+let third = localStorage.getItem('3rd');
 
 let bird = document.querySelector(".bird");
 let container = document.querySelector('.game_container');
@@ -72,8 +74,27 @@ function gameOver (condition) {
         tryAgain.addEventListener('click', ()=>{location.reload()});
 
         // Get high score
-        highestScoreDisplay.textContent = `HIGH SCORE ${highScore}`;
+        
         // setTimeout(() => {container.removeChild(bird)}, 300);
+        if (score >= first) {
+            if (second !== null) {
+                localStorage.setItem('3rd', second);
+            }
+            if (first !== null) {
+                localStorage.setItem('2nd', first);
+            }
+            localStorage.setItem('1st', score);
+        } else if (score >= second) {
+            if (second !== null) {
+                localStorage.setItem('3rd', second);
+            }
+            localStorage.setItem('2nd', score);
+        } else if (score >= third) {
+            localStorage.setItem('3rd', score);
+        }
+        let highScore = localStorage.getItem('1st');
+        highScore = 0 ? highScore == null : highScore;
+        highestScoreDisplay.textContent = `HIGH SCORE ${highScore}`;
     }
 }
 
@@ -113,10 +134,10 @@ function genObstacle () {
         // Add 1 to score if bird passes obstacle
         if ((obstacleLeft === 210 || obstacleLeft == 211) && !isGameOver) {
             score += 1;
-            if (score > highScore) {
-                highScore = score;
-                localStorage.setItem('highScore', highScore);
-            }
+            // if (score > highScore) {
+            //     highScore = score;
+            //     localStorage.setItem('highScore', highScore);
+            // }
             scoreOnScreen.textContent = score;
             // console.log(score);
         }
