@@ -43,20 +43,7 @@ Flappy Bird is an arcade-style game in which the player controls the bird Faby, 
 
 ## How to play?
 
-Clone the repository from:
-
-[GitHub Link](https://github.com/MadalinCiobanu/flappy-bird)
-
-Go to the clone folder into the Terminal and run:
-
-```
-python3 -m http.server
-```
-
-And go to : 
-
-[Game Link](http://0.0.0.0:8000/home.html)
-
+Clone the repository and double-click on home.html file.
 
 ## Contact
 
